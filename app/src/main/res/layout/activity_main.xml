@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="54dp"
+            android:layout_marginTop="14dp"
             android:contentDescription="@string/gallery_picture_description"
             android:src="@drawable/logo" />
 
@@ -28,8 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_alignStart="@id/gallery_picture"
             android:layout_alignBottom="@id/gallery_picture"
-            android:layout_marginStart="0dp"
-            android:layout_marginBottom="-77dp"
+            android:layout_marginBottom="-117dp"
             android:text="@string/left_button_name" />
 
         <Button
@@ -50,23 +49,42 @@
 
         <Button
             android:id="@+id/search_button"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="80dp"
-            android:layout_marginBottom="42dp"
+            android:layout_marginBottom="22dp"
             android:text="@string/search_button_name"
             android:onClick="onClickToFilterActivity"/>
 
-        <Button
-            android:id="@+id/edit_button"
+        <TextView
+            android:id="@+id/timeStamp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/search_button"
-            android:layout_marginStart="190dp"
-            android:layout_marginBottom="42dp"
-            android:text="@string/edit_button_name" />
+            android:layout_alignStart="@+id/gallery_picture"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="168dp"
+            android:text="Time Stamp: example" />
+
+        <TextView
+            android:id="@+id/caption_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/timeStamp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="148dp"
+            android:text="Caption: "/>
+
+        <EditText
+            android:id="@+id/caption_edit"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/caption_title"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="140dp"
+            android:inputType="text"
+            android:textSize="10dp"
+            android:text="Caption Example" />
 
 
     </RelativeLayout>
