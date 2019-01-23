@@ -21,21 +21,14 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
 @RunWith(AndroidJUnit4.class)
-public class MyApplicationEspressoTest {
+public class SearchActivityEspressoTest {
     @Rule
-    public ActivityTestRule<MainActivity> mActivityRule =
-            new ActivityTestRule<>(MainActivity.class);
+    public ActivityTestRule<FilterActivity> mActivityRule =
+            new ActivityTestRule<>(FilterActivity.class);
+
     @Test
-    public void ensureTextChangesWork() {
-        // Type text and then press the button.
-        /*onView(withId(R.id.))
-                .perform(typeText("HELLO"), closeSoftKeyboard());
-        onView(withId(R.id.button2))
-                .perform(click());
-        // Check that the text was changed.
-        onView(withId(R.id.button3))
-                .check(matches(withText("HELLO")));
-        //onView(withContentDescription("Navigate up")).perform(click());
-        */
+    public void ensureSearchWorks() {
+        // Type text into time from text box
+
     }
 }
