@@ -6,87 +6,102 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="16dp"
-        android:paddingRight="16dp" >
+        android:paddingRight="16dp"
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/gallery_picture"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="14dp"
-            android:contentDescription="@string/gallery_picture_description"
-            android:src="@drawable/logo" />
-
-        <TextView
-            android:id="@+id/timeStamp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/gallery_picture"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="168dp"
-            android:text="Time Stamp: example" />
-
-        <TextView
-            android:id="@+id/caption_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/timeStamp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="148dp"
-            android:text="Caption: " />
-
-        <EditText
-            android:id="@+id/caption_edit"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="140dp"
-            android:layout_toEndOf="@+id/caption_title"
-            android:inputType="text"
-            android:text="Caption Example"
-            android:textSize="10dp" />
-
-        <Button
-            android:id="@+id/go_to_left_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@id/gallery_picture"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="87dp"
-            android:text="@string/left_button_name" />
-
-        <Button
-            android:id="@+id/snapshot_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/go_to_left_button"
-            android:layout_centerHorizontal="true"
-            android:text="@string/snap_button_name" />
-
-        <Button
-            android:id="@+id/go_to_right_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/gallery_picture"
-            android:layout_alignBottom="@+id/go_to_left_button"
-            android:text="@string/right_button_name" />
-
-        <Button
-            android:id="@+id/search_button"
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="22dp"
-            android:text="@string/search_button_name"
-            android:onClick="onClickToFilterActivity"/>
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
 
+            <ImageView
+                android:id="@+id/gallery_picture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="14dp"
+                android:contentDescription="@string/gallery_picture_description"
+                android:src="@drawable/logo" />
 
-    </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2" >
+
+            <TextView
+                android:id="@+id/timeStamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="Time Stamp: example" />
+
+            <TextView
+                android:id="@+id/caption_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/timeStamp"
+                android:layout_below="@+id/timeStamp"
+                android:layout_marginTop="5dp"
+                android:text="Caption: " />
+
+            <EditText
+                android:id="@+id/caption_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/caption_title"
+                android:layout_toEndOf="@+id/caption_title"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="-10dp"
+                android:inputType="text"
+                android:text="Caption Example"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/go_to_left_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/timeStamp"
+                android:layout_below="@+id/caption_title"
+                android:layout_marginTop="5dp"
+                android:onClick="onClick"
+                android:text="@string/left_button_name" />
+
+            <Button
+                android:id="@+id/snapshot_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/go_to_left_button"
+                android:layout_centerHorizontal="true"
+                android:onClick="takePicture"
+                android:text="@string/snap_button_name" />
+
+            <Button
+                android:id="@+id/go_to_right_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignBottom="@+id/go_to_left_button"
+                android:onClick="onClick"
+                android:text="@string/right_button_name" />
+
+            <Button
+                android:id="@+id/go_to_search_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="22dp"
+                android:text="@string/search_button_name"
+                android:onClick="onClickToFilterActivity"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

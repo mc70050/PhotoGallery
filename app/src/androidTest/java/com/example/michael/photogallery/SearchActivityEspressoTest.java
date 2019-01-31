@@ -26,23 +26,24 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 @RunWith(AndroidJUnit4.class)
 public class SearchActivityEspressoTest {
     @Rule
-    public ActivityTestRule<FilterActivity> mActivityRule =
-            new ActivityTestRule<>(FilterActivity.class);
+    public ActivityTestRule<MainActivity> mActivityRule =
+            new ActivityTestRule<>(MainActivity.class);
 
 
     @Test
     public void ensureSearchWorks() {
+
+        onView(withId(R.id.go_to_search_button)).perform(click());
         // Type text into time from text box
-        onView(withId(R.id.timeframe_from_text)).perform(typeText("01/01/2019"), closeSoftKeyboard());
+        onView(withId(R.id.timeframe_from_text)).perform(typeText("01/01/2018"), closeSoftKeyboard());
         // Type text into time until text box
         onView(withId(R.id.timeframe_to_text)).perform(typeText("01/02/2019"), closeSoftKeyboard());
-        // Type text into keywords text box
-        onView(withId(R.id.keyword_text)).perform(typeText("logo"), closeSoftKeyboard());
 
         // Click on Search button to start search
         onView(withId(R.id.search_button)).perform(click());
 
-        // Check that imageView is displaying logo
-        onView(withId(R.id.gallery_picture)).check(matches(withResourceName("logo.png")));
+        for (int i = 0; i <= 5; i++) {
+            onView(withId(R.id.go_to_right_button)).perform(click());
+        }
     }
 }
