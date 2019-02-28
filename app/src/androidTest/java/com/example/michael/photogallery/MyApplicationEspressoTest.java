@@ -23,8 +23,8 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 @RunWith(AndroidJUnit4.class)
 public class MyApplicationEspressoTest {
     @Rule
-    public ActivityTestRule<MainActivity> mActivityRule =
-            new ActivityTestRule<>(MainActivity.class);
+    public ActivityTestRule<FilterActivity> mActivityRule =
+            new ActivityTestRule<>(FilterActivity.class);
     @Test
     public void ensureTextChangesWork() {
         // Type text and then press the button.
